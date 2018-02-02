@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body style="background-image: url(https://getbg.net/upload/full/www.GetBg.net_Backgrounds_The_rapid_rotation_of_the_light_100128_.jpg)">
+
+<ul>
+    <font color="white" size="6">
+    <th:block th:each="user : ${users}">
+    <li><a style="text-decoration:none; color: red" th:href="@{'/twaddle/user/' + ${user.id}}" th:text="${user.userName}"></a></li>
+    </th:block>
+    </font>
+</ul>
+<br></br>
+<br></br>
+<br></br>
+<font size="6">
+<a style="text-decoration:none; color: yellow" href="/twaddle">Zur Startseite</a>
+</font>
+</body>
+</html>
