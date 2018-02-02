@@ -3,13 +3,23 @@
 <head>
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </link>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    </link>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
 </head>
 <body style="background-image: url(https://getbg.net/upload/full/www.GetBg.net_Backgrounds_The_rapid_rotation_of_the_light_100128_.jpg)">
 
 <ul>
     <font color="white" size="6">
     <th:block th:each="user : ${users}">
-    <li><a style="text-decoration:none; color: red" th:href="@{'/twaddle/user/' + ${user.id}}" th:text="${user.userName}"></a></li>
+        <li><a style="text-decoration:none; color: red" th:href="@{'/twaddle/user/' + ${user.id}}" th:text="${user.userName}"></a></li>
     </th:block>
     </font>
 </ul>

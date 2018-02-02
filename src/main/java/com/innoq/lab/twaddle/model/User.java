@@ -1,9 +1,6 @@
 package com.innoq.lab.twaddle.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class User {
@@ -15,6 +12,9 @@ public class User {
     private String userName;
 
     private String passwd;
+
+    @Lob
+    private byte[] avatar;
 
     public User() {
     }
@@ -46,6 +46,14 @@ public class User {
 
     public void setPasswd(String passwd) {
         this.passwd = passwd;
+    }
+
+    public byte[] getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(byte[] avatar) {
+        this.avatar = avatar;
     }
 
     @Override

@@ -3,23 +3,36 @@
 <head>
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </link>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    </link>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
 </head>
 <body style="background-image: url(https://getbg.net/upload/full/www.GetBg.net_Backgrounds_The_rapid_rotation_of_the_light_100128_.jpg)">
+<center>
+<dl>
+    <label for="name"><font color="yellow" size="6"><u>Benutzername:</u></font></label>
+    <font color="red" size="6">
+    <dt id="name" th:text="${user.userName}"></dt>
+    </font>
+    <font color="white">
+        <img class="picture" th:src="@{'/twaddle/user/' + ${user.id} + '/avatar'}" width="20%" height="20%" alt="&nbsp;Kein Avatarbild hochgeladen!" /></font>
+</dl>
 
-<dd>
-<font color="red" size="6">
-<dt>Benutzer:</dt>
-</font>
-<font color="white" size="6">
-<dl th:text="${name}"></dl>
-</font>
-</dd>
-<br></br>
-<br></br>
-<br></br>
+<div>
+    <font size="5">
+    <a style="color: #7eff36" th:href="@{'/twaddle/user/' + ${user.id} + '/avatar/upload'}">Avatar hochladen</a>
+    <br></br>
+    <a style="color: #7eff36" href="/twaddle">Zur Startseite</a>
+    </font>
+</div>
+</center>
 
-<font size="6">
-<a style="text-decoration:none; color: yellow" href="/twaddle">Zur Startseite</a>
-</font>
 </body>
 </html>
